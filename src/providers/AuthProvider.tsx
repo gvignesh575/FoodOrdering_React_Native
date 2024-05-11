@@ -16,6 +16,7 @@ const AuthContext = createContext<AuthData>({
     isAdmin: false,
 });
 
+
 export default function AuthProvider({ children }: PropsWithChildren) {
 
   const [session, setSession] = useState<Session | null>(null);
