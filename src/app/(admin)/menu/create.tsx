@@ -9,9 +9,9 @@ import { useDeleteProduct, useInsertProduct, useProduct, useUpdateProduct } from
 
 const CreateProductScreen = () => {
  
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
-    const [errors, setErrors] = useState('');
+    const [name, setName] = useState<string | null>('');
+    const [price, setPrice] = useState<string | null>('');
+    const [errors, setErrors] = useState<string | null>('');
     const [image, setImage] = useState<string | null>(null);
 
 
