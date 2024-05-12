@@ -37,11 +37,6 @@ const {data: product,error,isLoading} = useProduct(id);
     router.push('/cart');
   }
 
-  if (!product)
-    {
-      return <Text>Product Not found!</Text>
-    }
-
     if(isLoading)
       {
         return <ActivityIndicator />

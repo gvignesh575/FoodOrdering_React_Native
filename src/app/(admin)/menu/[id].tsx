@@ -10,21 +10,24 @@ import { PizzaSize } from '@/src/types';
 import { useRouter } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons';
 import Colors from '@/src/constants/Colors';
+import { useProduct } from '@/src/api/products';
 
 const sizes: PizzaSize[] = ['S','M','L','XL']
 
 const ProductScreen = () => {
   
-  const { id } = useLocalSearchParams();
+  const { id: idString } = useLocalSearchParams();
   
+  const id = parseFloat(typeof idString === "string" ? idString : idString[0])
+
   const { addItem } = useCart(); 
 
   const router = useRouter();
 
   const [selectedSize, setSelectedSize] = useState<PizzaSize>('M');
 
-  const product = products.find((p) => p.id.toString() === id);
-
+  const {data: product} = useProduct(id);
+  
   const addToCart = () => {
     if (!product) {
       return;

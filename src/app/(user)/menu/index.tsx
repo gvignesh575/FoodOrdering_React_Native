@@ -2,13 +2,13 @@ import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import ProductListItem from '@/src/components/ProductListItem';
 
 import { useProductList } from '@/src/api/products';
+import { useAuth } from '@/src/providers/AuthProvider';
 
 
 export default function MenuScreen() {
   
 
-  const {data: products, error, isLoading} = useProductList();
-  
+  const {data: products, error, isLoading} = useProductList();  
   if(isLoading)
     {
       return <ActivityIndicator />
@@ -20,8 +20,9 @@ export default function MenuScreen() {
         Failed to fetch products
       </Text>
     }
-  
-  
+
+
+
   return (
     <View>
       {/* <ProductListItem product={products[0]} /> */}

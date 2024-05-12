@@ -22,6 +22,8 @@ const index = () => {
       return <Redirect href={'/(user)'} />
     }
 
+    console.log(session.user.email);
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', padding: 10 }}>
       <Link href={'/(user)'} asChild>

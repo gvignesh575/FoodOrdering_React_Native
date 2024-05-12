@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     flex: 1,
     margin: 5,
-    maxWidth: "50%",
+    maxWidth: '50%',
   },
   title: {
     fontSize: 20,
